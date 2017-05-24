@@ -1,0 +1,166 @@
+Go For Web Development
+Web Zurich meetup presentation
+24 May 2017
+Tags: go, web
+
+Ivan Jovanovic
+Independent Web Software Engineer, loopthrough GmbH
+ivan@loopthrough.ch
+http://loopthrough.ch/
+@ivanjovanovic
+
+
+* Hello Gophers
+
+.image gopher.png
+.caption _Gopher_ by [[https://reneefrench.blogspot.ch/][Renée French]]
+
+* Why talking about Golang for web development
+
+There are several questions to ask, among others:
+
+- Is langauge mature and will it stand the future.
+- Is it providing means to achieve what is needed.
+- Is it promoting good engineering habits and culture.
+- Can I motivate great engineers to work with it and how hard is to find them.
+- How supportive is community
+- ...
+
+Importance of these depends on your particular case.
+
+* About Go
+
+- Released 2009, now in version 1.8
+- Robert Griesemer, Rob Pike, Ken Thompson / C, Unix, UTF-8, HotSpot JVM
+- Meant to replace C++
+- Affecting Python/Ruby more in practice.
+
+* Basic principles
+
+- simplicity/conservativism, somewhat towards extreme
+- Safer than C, kept on the low level of abstraction
+- First-class higher-level concurrency primitives
+- Pragmatism
+- Designed for scaling both your product and the team
+
+* Engineering culture
+- Simplicity
+- Pragmatism
+- Explicit handling of errors.
+- Testing, benchmarking.
+- Composability instead of monolythin approach.
+
+* Outstanding features
+
+* Simple and effective type system
+- statically typed
+- type inference
+- value construction literals
+- structured typing
+- can escape type system with "interface{}"
+- too simple? No generics is a running complain since release.
+
+* Type inference
+
+.play type_inference.go
+
+* Structured typing
+
+.play structured_typing.go
+
+* Concurrency primitives / CSP
+- goroutines, lightweight threads on top of native OS threads.
+- share memory by communicating, don't communicate by sharing memory.
+- blocking/buffered typed channels for communicating and synchronisation.
+
+.image dontbeclever.png
+
+* Channels example
+
+.play channels.go
+
+* Concurrency is not parallelism
+- If execution will be parallel depends on many things.
+- Go scheduler improves constantly for multicore execution.
+- It is still on you to design your work chunks and distribute them properly.
+
+* Compilation
+- compiles to static binary, great for containers.
+- compiles fast.
+- runs fast as well.
+
+* Langauge Tooling
+- gocode
+- goimport
+- godef
+- gofmt
+- golint
+- ...
+
+* IDEs
+- Emacs
+- vim
+- Visual Studio Code
+- JetBrains Gogland
+- ...
+
+* Go and Web Development
+
+* It is a good all-around tool
+- Command-line tools
+- Server-side rendering HTML
+- Great for APIs
+- microservices
+
+* Comes with production ready HTTP server (net/http)
+- Simple but powerful API for handling HTTP requests
+- Concurrent, goroutine per request.
+- Supports HTTP/2
+
+.play http_server.go
+
+* Using HTTP server API
+- Easy to extend through middlewares
+
+.code middleware.go
+
+- Number of web frameworks built on top
+- Still lot of teams just use provided API with different libraries.
+
+* Comes with templating (text/template, html/template)
+- simple but powerful
+- text/template and html/template
+- escaping by default
+- live updates in DEV mode
+
+* Template example
+
+.link https://golang.org/pkg/text/template/#example_Template
+
+* Comes with testing and benchmarking frameworks (testing)
+- simple to start testing your packages
+
+* DB support
+- Generic interface around SQL (database/sql)
+- MySQL, Postgres, SQLite drivers
+- Lot of drivers listed on Aswesome Go list: https://github.com/avelino/awesome-go#database-drivers
+- I used personally MongoDB driver.
+- Some ORMs emerging
+
+* 2016 Survey results
+
+.link https://blog.golang.org/survey2016-results
+
+* At the end
+- Extremely easy to pick up, beware though of complex concepts behind
+- Scales with the team, and is built for scaling your product.
+- Oriented towards custom, not run-off-the-mill projects.
+- Community valuing simplicity and pragmatism and getting things shipped.
+- Can be annoying with the decisions taken for you.
+- Package management improved but many find it lacking.
+
+* Places to continue
+- Tour of Go - https://tour.golang.org
+- Go FAQ - https://golang.org/doc/faq
+- Go Playground - https://play.golang.org/
+- Aswesome Go - https://github.com/avelino/awesome-go
