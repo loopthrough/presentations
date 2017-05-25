@@ -9,7 +9,6 @@ ivan@loopthrough.ch
 http://loopthrough.ch/
 @ivanjovanovic
 
-
 * Hello Gophers
 
 .image gopher.png
@@ -17,30 +16,35 @@ http://loopthrough.ch/
 
 * Why talking about Golang for web development
 
-There are several questions to ask, among others:
+There are many questions to ask when choosing a language:
 
-- Is langauge mature and will it stand the future.
-- Is it providing means to achieve what is needed.
-- Is it promoting good engineering habits and culture.
-- Can I motivate great engineers to work with it and how hard is to find them.
-- How supportive is community
+- Is language mature and will it stand the future?
+- Is it providing means to achieve what is needed?
+- Is it promoting good engineering habits and culture?
+- Can I motivate great engineers to work with it and how hard is to find them?
+- How big, active, supportive is the community?
 - ...
 
 Importance of these depends on your particular case.
 
+* Overview
+- Go language specifics
+- Go for web development
+
 * About Go
 
 - Released 2009, now in version 1.8
+- Startet at Google, now open source
 - Robert Griesemer, Rob Pike, Ken Thompson / C, Unix, UTF-8, HotSpot JVM
 - Meant to replace C++
 - Affecting Python/Ruby more in practice.
 
 * Basic principles
 
-- simplicity/conservativism, somewhat towards extreme
+- Simplicity/Conservativism, somewhat towards extreme
+- Pragmatism
 - Safer than C, kept on the low level of abstraction
 - First-class higher-level concurrency primitives
-- Pragmatism
 - Designed for scaling both your product and the team
 
 * Engineering culture
@@ -69,9 +73,9 @@ Importance of these depends on your particular case.
 .play structured_typing.go
 
 * Concurrency primitives / CSP
-- goroutines, lightweight threads on top of native OS threads.
-- share memory by communicating, don't communicate by sharing memory.
-- blocking/buffered typed channels for communicating and synchronisation.
+- Goroutines, lightweight threads on top of native OS threads.
+- Share memory by communicating, don't communicate by sharing memory.
+- Blocking/Buffered typed channels for communicating and synchronisation.
 
 .image dontbeclever.png
 
@@ -88,8 +92,9 @@ Importance of these depends on your particular case.
 - compiles to static binary, great for containers.
 - compiles fast.
 - runs fast as well.
+- deployed easily
 
-* Langauge Tooling
+* Language Tooling
 - gocode
 - goimport
 - godef
@@ -104,13 +109,14 @@ Importance of these depends on your particular case.
 - JetBrains Gogland
 - ...
 
-* Go and Web Development
+* Go for Web Development
 
 * It is a good all-around tool
 - Command-line tools
 - Server-side rendering HTML
 - Great for APIs
-- microservices
+- Microservices
+- Automation, Docker, Kubernetes ...
 
 * Comes with production ready HTTP server (net/http)
 - Simple but powerful API for handling HTTP requests
@@ -140,6 +146,13 @@ Importance of these depends on your particular case.
 * Comes with testing and benchmarking frameworks (testing)
 - simple to start testing your packages
 
+* Libraries
+- Many libraries addressing aspects of web development
+- Authentication
+- Validation
+- ...
+- Awesome Go list of libraries
+
 * DB support
 - Generic interface around SQL (database/sql)
 - MySQL, Postgres, SQLite drivers
@@ -151,12 +164,12 @@ Importance of these depends on your particular case.
 
 .link https://blog.golang.org/survey2016-results
 
-* At the end
+* At the end, some of my conclusions
 - Extremely easy to pick up, beware though of complex concepts behind
 - Scales with the team, and is built for scaling your product.
 - Oriented towards custom, not run-off-the-mill projects.
 - Community valuing simplicity and pragmatism and getting things shipped.
-- Can be annoying with the decisions taken for you.
+- Can be annoying with the decisions taken for you. Obay and will be OK.
 - Package management improved but many find it lacking.
 
 * Places to continue
